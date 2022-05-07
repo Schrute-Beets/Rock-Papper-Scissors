@@ -1,5 +1,10 @@
 function computerPlay() {
-    let randomNumber = Math.floor((Math.random()* 3 ) + 1);
-    return randomNumber;
+    let options = ["Rock", "Papper", "Scissors"];
+    let randomNumber = Math.floor(Math.random()*options.length);
+    let computerSelection = options(randomNumber);
+    return computerSelection;
 }
-console.log(randomNumber);
+
+function userPlay() {
+    
+}
