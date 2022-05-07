@@ -6,5 +6,17 @@ function computerPlay() {
 }
 
 function userPlay() {
-    
+    let validInput = false;
+
+    while (!validInput) {
+        
+        let input = prompt("Choose 'rock,' 'paper,' or 'scissors'!").toLowerCase;
+        if (input === "rock" || input === "paper" || input === "scissors") {
+            validInput = true;
+        }
+        else {
+            alert("Please enter a valid choice.");
+        }
+        
+    }
 }
