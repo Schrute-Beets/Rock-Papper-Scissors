@@ -1,43 +1,57 @@
+playRound();
+
 function computerPlay() {
-    let options = ["rock", "papper", "scissors"];
+    let options = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random()*options.length);
-    let computerSelection = options(randomNumber);
-    return computerSelection;
+    result = options[randomNumber];
+    return result;
 }
 
 function userPlay() {
     let validInput = false;
+    let input = prompt("Choose 'rock,' 'paper,' or 'scissors'!").toLowerCase();
 
     while (!validInput) {
-        let input = prompt("Choose 'rock,' 'paper,' or 'scissors'!").toLowerCase;
+        
         if (input === "rock" || input === "paper" || input === "scissors") {
             validInput = true;
         }
         else {
             alert("Please enter a valid choice.");
+            input = prompt("Choose 'rock,' 'paper,' or 'scissors'!").toLowerCase();
         }
     }
 
-    let userSelection = input;
-    return userSelection;
+    result = input;
+    return result;
 }
 
-function playRound(computerSelection, userSelection) {
-    if (computerSelection === "rock" && userSelection === "rock"){}
+function playRound() {
+    let computerSelection = computerPlay();
+    let userSelection = userPlay();
 
-    else if (computerSelection === "rock" && userSelection === "paper"){}
+    console.log("User: " + userSelection);
+    console.log("Computer: " + computerSelection);
 
-    else if (computerSelection === "rock" && userSelection === "scissors"){}
-
-    else if (computerSelection === "paper" && userSelection === "rock"){}
-
-    else if (computerSelection === "paper" && userSelection === "paper"){}
-
-    else if (computerSelection === "paper" && userSelection === "scissors"){}
-
-    else if (computerSelection === "scissors" && userSelection === "rock"){}
-
-    else if (computerSelection === "scissors" && userSelection === "paper"){}
-
-    else if (computerSelection === "scissors" && userSelection === "scissors"){}
+    if (computerSelection === userSelection){
+        console.log("It's a draw!");
+    }
+    else if (computerSelection === "rock" && userSelection === "paper"){
+        console.log("You win!");
+    }
+    else if (computerSelection === "rock" && userSelection === "scissors"){
+        console.log("You lose!");
+    }
+    else if (computerSelection === "paper" && userSelection === "rock"){
+        console.log("You lose!");
+    }
+    else if (computerSelection === "paper" && userSelection === "scissors"){
+        console.log("You win!");
+    }
+    else if (computerSelection === "scissors" && userSelection === "rock"){
+        console.log("You win!");
+    }
+    else if (computerSelection === "scissors" && userSelection === "paper"){
+        console.log("You lose!");
+    }
 }
