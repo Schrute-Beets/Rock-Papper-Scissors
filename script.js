@@ -1,5 +1,8 @@
+// Initial call of the RPS game
 game();
 
+// Returns the choice made by the computer
+// Obtained by random math function
 function computerPlay() {
     let options = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random()*options.length);
@@ -7,6 +10,8 @@ function computerPlay() {
     return result;
 }
 
+// Returns the choice made by the user
+// User is prompted for a choice. Prompt continues while a valid value is not inputted
 function userPlay() {
     let validInput = false;
     let input = prompt("Choose 'rock,' 'paper,' or 'scissors'!").toLowerCase();
@@ -26,6 +31,9 @@ function userPlay() {
     return result;
 }
 
+// Executes one round of gameplay
+// Takes in computer choice and user choice from previous functions
+// Returns the overall result of the round
 function playRound() {
     let computerSelection = computerPlay();
     let userSelection = userPlay();
@@ -58,6 +66,8 @@ function playRound() {
     return result;
 }
 
+// Executes five rounds of gameplay
+// Outputs a message with the result of the game, and keeps track of running score
 function game() {
     let computerWins = 0;
     let userWins = 0;
