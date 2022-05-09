@@ -36,32 +36,26 @@ function playRound() {
 
     if (computerSelection === userSelection){
         result = "draw";
-        return result;
     }
     else if (computerSelection === "rock" && userSelection === "paper"){
         result = "win";
-        return result;
     }
     else if (computerSelection === "rock" && userSelection === "scissors"){
         result = "loss";
-        return result;
     }
     else if (computerSelection === "paper" && userSelection === "rock"){
         result = "loss";
-        return result;
     }
     else if (computerSelection === "paper" && userSelection === "scissors"){
         result = "win";
-        return result;
     }
     else if (computerSelection === "scissors" && userSelection === "rock"){
         result = "win";
-        return result;
     }
     else if (computerSelection === "scissors" && userSelection === "paper"){
         result = "loss";
-        return result;
     }
+    return result;
 }
 
 function game() {
