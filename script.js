@@ -1,4 +1,4 @@
-playRound();
+game();
 
 function computerPlay() {
     let options = ["rock", "paper", "scissors"];
@@ -29,29 +29,65 @@ function userPlay() {
 function playRound() {
     let computerSelection = computerPlay();
     let userSelection = userPlay();
+    let result;
 
     console.log("User: " + userSelection);
     console.log("Computer: " + computerSelection);
 
     if (computerSelection === userSelection){
-        console.log("It's a draw!");
+        result = "draw";
+        return result;
     }
     else if (computerSelection === "rock" && userSelection === "paper"){
-        console.log("You win!");
+        result = "win";
+        return result;
     }
     else if (computerSelection === "rock" && userSelection === "scissors"){
-        console.log("You lose!");
+        result = "loss";
+        return result;
     }
     else if (computerSelection === "paper" && userSelection === "rock"){
-        console.log("You lose!");
+        result = "loss";
+        return result;
     }
     else if (computerSelection === "paper" && userSelection === "scissors"){
-        console.log("You win!");
+        result = "win";
+        return result;
     }
     else if (computerSelection === "scissors" && userSelection === "rock"){
-        console.log("You win!");
+        result = "win";
+        return result;
     }
     else if (computerSelection === "scissors" && userSelection === "paper"){
-        console.log("You lose!");
+        result = "loss";
+        return result;
+    }
+}
+
+function game() {
+    let computerWins = 0;
+    let userWins = 0;
+    let draws = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let result = playRound();
+
+        if (result === "draw"){
+            draws++;
+            console.log("It's a draw!");
+        }
+        else if (result === "win"){
+            userWins++;
+            console.log("You win!");
+        }
+        else if (result === "loss"){
+            computerWins++;
+            console.log("You lose!");
+        }
+
+        console.log("User wins: " + userWins);
+        console.log("Computer wins: " + computerWins);
+        console.log("Draws: " + draws);
+        console.log("------------------------------------------");
     }
 }
